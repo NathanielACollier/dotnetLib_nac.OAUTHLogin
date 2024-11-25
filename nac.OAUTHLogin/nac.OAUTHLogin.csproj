@@ -2,6 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>latestmajor</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>Provides a way to get an Oauth Auth token using the Default Web browser to prompt a user to login</Description>
+        <Version>1.0.1.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
