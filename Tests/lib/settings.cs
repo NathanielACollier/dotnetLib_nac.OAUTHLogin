@@ -8,6 +8,9 @@ public class settings
 
     public static string OAUTH_Microsoft_ClientId => Get("TestAuthAzureAppID");
     public static string OAUTH_Microsoft_ClientSecret => Get("TestAuthAzureClientSecret");
+
+    public static string OAUTH_Google_ClientId = Get("googleOAUTH_YoutubePlaylist_ClientID");
+    public static string OAUTH_Google_ClientSecret = Get("googleOAUTH_YoutubePlaylist_ClientSecret");
     
 
     private static string Get(string key)
