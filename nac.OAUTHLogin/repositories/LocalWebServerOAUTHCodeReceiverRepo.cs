@@ -42,7 +42,7 @@ public class LocalWebServerOAUTHCodeReceiverRepo
                 });
             
                 args.Response.WriteHtmlResponse(@"
-                <div style='color:green;font-weight:bold;'>You can close the browser now.   Google OAuth Code has been retrieved.</div>
+                <div style='color:green;font-weight:bold;'>You can close the browser now.  OAuth Code has been retrieved.</div>
             ");
             }
 
