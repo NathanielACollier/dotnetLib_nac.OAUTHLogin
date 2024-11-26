@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace Tests;
 
-[TestClass]
+[Collection(nameof(__MSTest_Setup))]
 public class UnitTest1
 {
-    [TestMethod]
+    [StaFact]
     public async Task TestMicrosoftLogin()
     {
         var microsoftSettings = nac.OAUTHLogin.repositories.VendorOAUTHSettings.GetMicrosoftOAUTHSettings();
@@ -16,13 +16,13 @@ public class UnitTest1
 
         string token = await nac.OAUTHLogin.OAUTH.GetAuthTokenViaDefaultBrowser(microsoftSettings);
         
-        Assert.IsTrue(!string.IsNullOrWhiteSpace(token) &&
+        Assert.True(!string.IsNullOrWhiteSpace(token) &&
                       token.Length > 20);
     }
 
 
 
-    [TestMethod]
+    [StaFact]
     public async Task TestGoogleLogin()
     {
         var oauthSettings = nac.OAUTHLogin.repositories.VendorOAUTHSettings.GetGoogleOAUTHSettings();
@@ -32,21 +32,20 @@ public class UnitTest1
 
         string token = await nac.OAUTHLogin.OAUTH.GetAuthTokenViaDefaultBrowser(oauthSettings);
         
-        Assert.IsTrue(!string.IsNullOrWhiteSpace(token) &&
+        Assert.True(!string.IsNullOrWhiteSpace(token) &&
                       token.Length > 20);
     }
 
 
 
-
-    [TestMethod]
+    [UIFact]
     public async Task PhotinoBrowserGoogleTest()
     {
         var win = nac.OAUTHLogin.repositories.PhotinoBrowserRepo.OpenAtUrl("https://www.google.com/");
         
         win.WaitForClose();
         
-        Assert.IsTrue(1==1);
+        Assert.True(1==1);
     }
     
     

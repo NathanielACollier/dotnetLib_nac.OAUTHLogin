@@ -1,17 +1,17 @@
+using System;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Xunit;
 
 namespace Tests;
 
-[TestClass]
-public class __MSTest_Setup
+[CollectionDefinition(nameof(__MSTest_Setup))]
+public class __MSTest_Setup : IDisposable, ICollectionFixture<__MSTest_Setup>
 {
     private static nac.Logging.Logger log = new();
 
     private static nac.http.logging.har.lib.HARLogManager harManager = new("http.har");
-
-    [AssemblyInitialize()]
-    public static async Task MyTestInitialize(TestContext testContext)
+    
+    public __MSTest_Setup()
     {
         nac.Logging.Appenders.Debug.Setup();
 
@@ -26,8 +26,8 @@ public class __MSTest_Setup
 
     }
 
-    [AssemblyCleanup]
-    public static void TearDown()
+
+    public void Dispose()
     {
 
     }
