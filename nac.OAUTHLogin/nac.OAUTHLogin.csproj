@@ -12,6 +12,7 @@
         <PackageReference Include="nac.http" Version="1.0.8" />
         <PackageReference Include="nac.utilities" Version="1.0.5" />
         <PackageReference Include="nac.WebServer" Version="1.0.5" />
+        <PackageReference Include="Photino.NET" Version="3.2.3" />
     </ItemGroup>
     
 
