@@ -35,7 +35,19 @@ public class UnitTest1
         Assert.IsTrue(!string.IsNullOrWhiteSpace(token) &&
                       token.Length > 20);
     }
-    
+
+
+
+
+    [TestMethod]
+    public async Task PhotinoBrowserGoogleTest()
+    {
+        var win = nac.OAUTHLogin.repositories.PhotinoBrowserRepo.OpenAtUrl("https://www.google.com/");
+        
+        win.WaitForClose();
+        
+        Assert.IsTrue(1==1);
+    }
     
     
     
