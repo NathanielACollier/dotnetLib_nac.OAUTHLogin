@@ -5,6 +5,12 @@ namespace Tests_MacOS;
 
 public class UnitTest1
 {
+    /*
+     For how to get these to work refer to this project on github
+     + https://github.com/AArnott/Xunit.StaFact/blob/18c45ca7fc5f7acaee8739e32bad85d01e33b776/test/Xunit.StaFact.Tests.Mac/Xunit.StaFact.Tests.Mac.csproj
+     */
+    
+    
     [CocoaFact]
     public async Task TestMicrosoftLogin()
     {
