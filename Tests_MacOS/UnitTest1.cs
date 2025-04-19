@@ -3,6 +3,7 @@ using Xunit;
 
 namespace Tests_MacOS;
 
+[Collection(nameof(__MSTest_Setup))]
 public class UnitTest1
 {
     /*
