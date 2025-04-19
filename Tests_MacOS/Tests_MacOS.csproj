@@ -2,13 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0-macos</TargetFramework>
+        <OutputType>Exe</OutputType>
 
         <LangVersion>latestmajor</LangVersion>
         <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
         <ApplicationId>nac.OAUTHLogin.Tests_MacOS</ApplicationId>
-        <SelfContained>true</SelfContained>
-        <PreserveCompilationContext>true</PreserveCompilationContext>
-        <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
+
     </PropertyGroup>
 
     <ItemGroup>
