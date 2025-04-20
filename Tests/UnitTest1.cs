@@ -6,7 +6,7 @@ namespace Tests;
 [Collection(nameof(__MSTest_Setup))]
 public class UnitTest1
 {
-    [StaFact]
+    [UIFact]
     public async Task TestMicrosoftLogin()
     {
         var microsoftSettings = nac.OAUTHLogin.repositories.VendorOAUTHSettings.GetMicrosoftOAUTHSettings();
@@ -22,7 +22,7 @@ public class UnitTest1
 
 
 
-    [StaFact]
+    [UIFact]
     public async Task TestGoogleLogin()
     {
         var oauthSettings = nac.OAUTHLogin.repositories.VendorOAUTHSettings.GetGoogleOAUTHSettings();
