@@ -18,7 +18,7 @@ public class TestFunctions
 
         Task.Run(async () =>
         {
-            string token = await nac.OAUTHLogin.OAUTH.GetAuthTokenViaDefaultBrowser(microsoftSettings);
+            string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(microsoftSettings);
 
             if (string.IsNullOrWhiteSpace(token) || token.Length < 25)
             {
@@ -45,7 +45,7 @@ public class TestFunctions
 
         Task.Run(async () =>
         {
-            string token = await nac.OAUTHLogin.OAUTH.GetAuthTokenViaDefaultBrowser(oauthSettings);
+            string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(oauthSettings);
 
             if (string.IsNullOrWhiteSpace(token) || token.Length < 25)
             {
@@ -62,7 +62,7 @@ public class TestFunctions
 
     public static void ShowGoogleHomepage(Form f)
     {
-        var win = nac.OAUTHLogin.repositories.PhotinoBrowserRepo.OpenAtUrl("https://www.google.com/");
+        var win = nac.OAUTHLogin.Photino.repositories.PhotinoBrowserRepo.OpenAtUrl("https://www.google.com/");
         
         win.WaitForClose();
     }

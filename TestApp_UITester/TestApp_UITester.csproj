@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\nac.OAUTHLogin\nac.OAUTHLogin.csproj" />
+      <ProjectReference Include="..\nac.OAUTHLogin.Photino\nac.OAUTHLogin.Photino.csproj" />
     </ItemGroup>
 
 </Project>

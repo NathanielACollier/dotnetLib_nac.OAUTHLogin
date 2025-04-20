@@ -1,14 +1,15 @@
 using System;
+using Photino.NET;
 
-namespace nac.OAUTHLogin.repositories;
+namespace nac.OAUTHLogin.Photino.repositories;
 
 public static class PhotinoBrowserRepo
 {
 
 
-    private static Photino.NET.PhotinoWindow CreateWindow()
+    private static PhotinoWindow CreateWindow()
     {
-        var window = new Photino.NET.PhotinoWindow()
+        var window = new PhotinoWindow()
             .SetTitle("Authentication")
             // set the window to be a specific size
             .SetUseOsDefaultSize(false)
@@ -19,7 +20,7 @@ public static class PhotinoBrowserRepo
         return window;
     }
 
-    public static Photino.NET.PhotinoWindow OpenAtUrl(string url)
+    public static PhotinoWindow OpenAtUrl(string url)
     {
         var window = CreateWindow();
 

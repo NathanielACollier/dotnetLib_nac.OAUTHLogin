@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <LangVersion>latestmajor</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>Provides a way to get an Oauth Auth token using the Default Web browser to prompt a user to login</Description>
@@ -12,6 +12,11 @@
         <PackageReference Include="nac.http" Version="1.0.8" />
         <PackageReference Include="nac.utilities" Version="1.0.5" />
         <PackageReference Include="nac.WebServer" Version="1.0.5" />
+        <PackageReference Include="Photino.NET" Version="4.0.16" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\nac.OAUTHLogin\nac.OAUTHLogin.csproj" />
     </ItemGroup>
     
 

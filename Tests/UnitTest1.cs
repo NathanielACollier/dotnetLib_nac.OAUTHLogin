@@ -1,12 +1,12 @@
 using System.Threading.Tasks;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests;
 
-[Collection(nameof(__MSTest_Setup))]
+[TestClass]
 public class UnitTest1
 {
-    [UIFact]
+    [TestMethod]
     public async Task TestMicrosoftLogin()
     {
         var microsoftSettings = nac.OAUTHLogin.repositories.VendorOAUTHSettings.GetMicrosoftOAUTHSettings();
@@ -14,15 +14,15 @@ public class UnitTest1
         microsoftSettings.ClientSecret = lib.settings.OAUTH_Microsoft_ClientSecret;
         microsoftSettings.Scope = "https://graph.microsoft.com/.default";
 
-        string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(microsoftSettings);
+        string token = await nac.OAUTHLogin.OAUTH.GetAuthTokenViaDefaultBrowser(microsoftSettings);
         
-        Assert.True(!string.IsNullOrWhiteSpace(token) &&
+        Assert.IsTrue(!string.IsNullOrWhiteSpace(token) &&
                       token.Length > 20);
     }
 
 
 
-    [UIFact]
+    [TestMethod]
     public async Task TestGoogleLogin()
     {
         var oauthSettings = nac.OAUTHLogin.repositories.VendorOAUTHSettings.GetGoogleOAUTHSettings();
@@ -30,23 +30,12 @@ public class UnitTest1
         oauthSettings.ClientSecret = lib.settings.OAUTH_Google_ClientSecret;
         oauthSettings.Scope = "email";
 
-        string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(oauthSettings);
+        string token = await nac.OAUTHLogin.OAUTH.GetAuthTokenViaDefaultBrowser(oauthSettings);
         
-        Assert.True(!string.IsNullOrWhiteSpace(token) &&
+        Assert.IsTrue(!string.IsNullOrWhiteSpace(token) &&
                       token.Length > 20);
     }
-
-
-
-    [UIFact]
-    public async Task PhotinoBrowserGoogleTest()
-    {
-        var win = nac.OAUTHLogin.Photino.repositories.PhotinoBrowserRepo.OpenAtUrl("https://www.google.com/");
-        
-        win.WaitForClose();
-        
-        Assert.True(1==1);
-    }
+    
     
     
     
