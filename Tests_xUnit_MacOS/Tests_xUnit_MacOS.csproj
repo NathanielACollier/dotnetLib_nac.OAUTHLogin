@@ -7,6 +7,7 @@
         <LangVersion>latestmajor</LangVersion>
         <RuntimeIdentifier>osx-arm64</RuntimeIdentifier>
         <ApplicationId>nac.OAUTHLogin.Tests_MacOS</ApplicationId>
+        <RootNamespace>Tests_MacOS</RootNamespace>
 
     </PropertyGroup>
 

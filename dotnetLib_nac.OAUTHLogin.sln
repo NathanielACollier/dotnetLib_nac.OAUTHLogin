@@ -4,9 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nac.OAUTHLogin", "nac.OAUTH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp_UITester", "TestApp_UITester\TestApp_UITester.csproj", "{6D2FD9D9-FBAB-4120-98CA-A308ABB5DC33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{54370995-8D28-4B10-B4BB-610E616E1962}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_xUnit_UICrossPlatform", "Tests_xUnit_UICrossPlatform\Tests_xUnit_UICrossPlatform.csproj", "{54370995-8D28-4B10-B4BB-610E616E1962}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_MacOS", "Tests_MacOS\Tests_MacOS.csproj", "{28C06443-48DA-43F4-992D-AEA3BA391D14}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests_xUnit_MacOS", "Tests_xUnit_MacOS\Tests_xUnit_MacOS.csproj", "{28C06443-48DA-43F4-992D-AEA3BA391D14}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

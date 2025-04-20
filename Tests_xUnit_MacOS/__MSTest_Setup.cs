@@ -21,7 +21,7 @@ public class __MSTest_Setup : IDisposable, ICollectionFixture<__MSTest_Setup>
             log.Debug(_args.ToString());
         };
 
-        log.Info("Tests Starting");
+        log.Info("Tests_xUnit_UICrossPlatform Starting");
 
     }
 
