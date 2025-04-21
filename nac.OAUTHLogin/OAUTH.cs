@@ -9,7 +9,12 @@ public static class OAUTH
     {
         var desktopFlow = new repositories.DesktopAppLocalServerFlowRepo(settings);
 
-        string token = await desktopFlow.GetAuthorizationToken_ViaDefaultBrowser();
+        string token = await desktopFlow.GetAuthorizationToken(loginUrl =>
+        {
+            // now we need to show that URL to the user in a web browser
+            nac.WebServer.lib.BrowserUtility.OpenBrowser(loginUrl);
+        });
+
         return token;
     }
 

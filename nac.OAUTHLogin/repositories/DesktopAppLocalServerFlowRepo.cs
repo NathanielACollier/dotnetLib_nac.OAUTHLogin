@@ -17,21 +17,9 @@ public class DesktopAppLocalServerFlowRepo
         this.oauthSettings = oauthSettings;
         this.oauthAPI = new repositories.OAuthAPIRepo(this.oauthSettings);
     }
-
-    public async Task<string> GetAuthorizationToken_ViaDefaultBrowser()
-    {
-        string oauthToken = await GetAuthorizationToken(onLocalLoginUrlAvailable: (loginUrl) =>
-        {
-            // now we need to show that URL to the user in a web browser
-            nac.WebServer.lib.BrowserUtility.OpenBrowser(loginUrl);
-        });
-        
-        return oauthToken;
-    }
     
     public delegate void onLocalLoginUrlAvailableDelegate(string loginUrl);
-
-
+    
     public async Task<string> GetAuthorizationToken(onLocalLoginUrlAvailableDelegate onLocalLoginUrlAvailable)
     {
         this.codeReceiverResult = SetupLoginUrlAndLocalCodeReceiverServer();
