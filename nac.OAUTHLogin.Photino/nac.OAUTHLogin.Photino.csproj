@@ -18,6 +18,10 @@
     <ItemGroup>
       <ProjectReference Include="..\nac.OAUTHLogin\nac.OAUTHLogin.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="model\" />
+    </ItemGroup>
     
 
 </Project>

@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace nac.OAUTHLogin.Photino.model;
+namespace nac.OAUTHLogin.model;
 
 public class SetupLocalServerResult
 {

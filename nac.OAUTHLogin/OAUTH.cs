@@ -9,7 +9,7 @@ public static class OAUTH
     {
         var desktopFlow = new repositories.DesktopAppLocalServerFlowRepo(settings);
 
-        string token = await desktopFlow.GetAuthorizationToken();
+        string token = await desktopFlow.GetAuthorizationToken_ViaDefaultBrowser();
         return token;
     }
 

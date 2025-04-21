@@ -9,7 +9,7 @@ public static class OAUTH
     {
         var desktopFlow = new Photino.repositories.DesktopAppLocalServerFlowRepo(settings);
 
-        string token = await desktopFlow.GetAuthorizationToken();
+        string token = await desktopFlow.GetAuthorizationToken_ViaPhotino();
         return token;
     }
 
