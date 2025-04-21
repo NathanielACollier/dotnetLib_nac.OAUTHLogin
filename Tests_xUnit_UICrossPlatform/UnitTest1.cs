@@ -14,7 +14,7 @@ public class UnitTest1
         microsoftSettings.ClientSecret = lib.settings.OAUTH_Microsoft_ClientSecret;
         microsoftSettings.Scope = "https://graph.microsoft.com/.default";
 
-        string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(microsoftSettings);
+        string token = await nac.OAUTHLogin.Photino.OAUTH.GetToken(microsoftSettings);
         
         Assert.True(!string.IsNullOrWhiteSpace(token) &&
                       token.Length > 20);
@@ -30,7 +30,7 @@ public class UnitTest1
         oauthSettings.ClientSecret = lib.settings.OAUTH_Google_ClientSecret;
         oauthSettings.Scope = "email";
 
-        string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(oauthSettings);
+        string token = await nac.OAUTHLogin.Photino.OAUTH.GetToken(oauthSettings);
         
         Assert.True(!string.IsNullOrWhiteSpace(token) &&
                       token.Length > 20);

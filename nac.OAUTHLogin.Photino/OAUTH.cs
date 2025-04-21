@@ -6,7 +6,7 @@ namespace nac.OAUTHLogin.Photino;
 public static class OAUTH
 {
 
-    public static async Task<string> GetAuthTokenViaDefaultBrowser(OAUTHLogin.model.OAUTHSettings settings)
+    public static async Task<string> GetToken(OAUTHLogin.model.OAUTHSettings settings)
     {
         var desktopFlow = new OAUTHLogin.repositories.DesktopAppLocalServerFlowRepo(settings);
         

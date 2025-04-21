@@ -18,7 +18,7 @@ public class TestFunctions
 
         Task.Run(async () =>
         {
-            string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(microsoftSettings);
+            string token = await nac.OAUTHLogin.Photino.OAUTH.GetToken(microsoftSettings);
 
             if (string.IsNullOrWhiteSpace(token) || token.Length < 25)
             {
@@ -45,7 +45,7 @@ public class TestFunctions
 
         Task.Run(async () =>
         {
-            string token = await nac.OAUTHLogin.Photino.OAUTH.GetAuthTokenViaDefaultBrowser(oauthSettings);
+            string token = await nac.OAUTHLogin.Photino.OAUTH.GetToken(oauthSettings);
 
             if (string.IsNullOrWhiteSpace(token) || token.Length < 25)
             {
