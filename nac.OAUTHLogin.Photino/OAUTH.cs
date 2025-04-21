@@ -8,13 +8,14 @@ public static class OAUTH
 
     public static async Task<string> GetToken(OAUTHLogin.model.OAUTHSettings settings)
     {
+        var photinoRepo = new repositories.PhotinoBrowserRepo();
         var desktopFlow = new OAUTHLogin.repositories.DesktopAppLocalServerFlowRepo(settings);
         
         photinoNet.PhotinoWindow localBrowserWindow = null;
         
-        string oauthToken = await desktopFlow.GetAuthorizationToken(loginUrl =>
+        string oauthToken = await desktopFlow.GetAuthorizationToken(async loginUrl =>
         {
-            localBrowserWindow = repositories.PhotinoBrowserRepo.OpenAtUrl(loginUrl);
+            localBrowserWindow = await photinoRepo.OpenAtUrl(loginUrl);
         });
         
         localBrowserWindow.Close();

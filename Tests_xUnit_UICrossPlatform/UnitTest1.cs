@@ -41,7 +41,8 @@ public class UnitTest1
     [UIFact]
     public async Task PhotinoBrowserGoogleTest()
     {
-        var win = nac.OAUTHLogin.Photino.repositories.PhotinoBrowserRepo.OpenAtUrl("https://www.google.com/");
+        var photinoRepo = new nac.OAUTHLogin.Photino.repositories.PhotinoBrowserRepo();
+        var win = await photinoRepo.OpenAtUrl("https://www.google.com/");
         
         win.WaitForClose();
         

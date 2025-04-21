@@ -62,9 +62,14 @@ public class TestFunctions
 
     public static void ShowGoogleHomepage(Form f)
     {
-        var win = nac.OAUTHLogin.Photino.repositories.PhotinoBrowserRepo.OpenAtUrl("https://www.google.com/");
-        
-        win.WaitForClose();
+        var photinoRepo = new nac.OAUTHLogin.Photino.repositories.PhotinoBrowserRepo();
+
+        Task.Run(async () =>
+        {
+            var win = await photinoRepo.OpenAtUrl("https://www.google.com/");
+
+            win.WaitForClose();
+        });
     }
     
     

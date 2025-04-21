@@ -1,13 +1,19 @@
 using System;
+using System.Threading.Tasks;
 using Photino.NET;
 
 namespace nac.OAUTHLogin.Photino.repositories;
 
-public static class PhotinoBrowserRepo
+public class PhotinoBrowserRepo
 {
+    private System.Threading.SynchronizationContext mainContext;
 
+    public PhotinoBrowserRepo()
+    {
+        this.mainContext = System.Threading.SynchronizationContext.Current;
+    }
 
-    private static PhotinoWindow CreateWindow()
+    private PhotinoWindow CreateWindow()
     {
         var window = new PhotinoWindow()
             .SetTitle("Authentication")
@@ -20,13 +26,19 @@ public static class PhotinoBrowserRepo
         return window;
     }
 
-    public static PhotinoWindow OpenAtUrl(string url)
+    public Task<PhotinoWindow> OpenAtUrl(string url)
     {
-        var window = CreateWindow();
-
-        window.Load(new Uri(url));
+        var promise = new System.Threading.Tasks.TaskCompletionSource<PhotinoWindow>();
         
-        return window;
+        this.mainContext.Post(_ =>
+        {
+            var window = CreateWindow();
+
+            window.Load(new Uri(url));
+            promise.SetResult(window);
+        },null);
+        
+        return promise.Task;
     }
     
 }
