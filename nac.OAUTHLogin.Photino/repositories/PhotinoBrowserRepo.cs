@@ -6,11 +6,11 @@ namespace nac.OAUTHLogin.Photino.repositories;
 
 public class PhotinoBrowserRepo
 {
-    private System.Threading.SynchronizationContext mainContext;
+    private System.Threading.SynchronizationContext mainContext => System.Threading.SynchronizationContext.Current;
 
     public PhotinoBrowserRepo()
     {
-        this.mainContext = System.Threading.SynchronizationContext.Current;
+
     }
 
     private PhotinoWindow CreateWindow()
@@ -29,12 +29,28 @@ public class PhotinoBrowserRepo
     public Task<PhotinoWindow> OpenAtUrl(string url)
     {
         var promise = new System.Threading.Tasks.TaskCompletionSource<PhotinoWindow>();
+
+        if (System.OperatingSystem.IsMacOS())
+        {
+            if (mainContext is null)
+            {
+                System.Threading.
+                    SynchronizationContext.SetSynchronizationContext(
+                        new System.Threading.SynchronizationContext()
+                    );
+            }
+        }
         
         this.mainContext.Post(_ =>
         {
             var window = CreateWindow();
 
-            window.Load(new Uri(url));
+            window.Invoke(() =>
+            {
+                window.Load(new Uri(url));
+            });
+
+            
             promise.SetResult(window);
         },null);
         
