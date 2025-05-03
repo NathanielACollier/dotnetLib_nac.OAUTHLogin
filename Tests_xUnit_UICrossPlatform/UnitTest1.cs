@@ -45,8 +45,6 @@ public class UnitTest1
         
         await photinoRepo.OpenAtUrl("https://www.google.com/");
         
-        
-        
         Assert.True(1==1);
     }
     
