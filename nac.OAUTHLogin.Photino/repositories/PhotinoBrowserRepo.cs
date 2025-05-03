@@ -29,15 +29,17 @@ public class PhotinoBrowserRepo
     public Task<PhotinoWindow> OpenAtUrl(string url)
     {
         var promise = new System.Threading.Tasks.TaskCompletionSource<PhotinoWindow>();
-        
-        var window = CreateWindow();
-        
-        this.mainContext.Post(_ =>
+
+        var t = new System.Threading.Thread(() =>
         {
+            var window = CreateWindow();
+        
             window.Load(new Uri(url));
-            
-            promise.SetResult(window);
-        },null);
+        
+            window.WaitForClose();
+        });
+        
+        t.Start();
         
         return promise.Task;
     }

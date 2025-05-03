@@ -42,9 +42,10 @@ public class UnitTest1
     public async Task PhotinoBrowserGoogleTest()
     {
         var photinoRepo = new nac.OAUTHLogin.Photino.repositories.PhotinoBrowserRepo();
-        var win = await photinoRepo.OpenAtUrl("https://www.google.com/");
         
-        win.WaitForClose();
+        await photinoRepo.OpenAtUrl("https://www.google.com/");
+        
+        
         
         Assert.True(1==1);
     }
