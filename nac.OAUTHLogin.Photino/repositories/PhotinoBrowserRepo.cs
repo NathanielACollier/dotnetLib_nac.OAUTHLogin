@@ -35,9 +35,9 @@ public class PhotinoBrowserRepo
             var window = CreateWindow();
         
             window.Load(new Uri(url));
-        
-            window.WaitForClose();
             promise.SetResult(window);
+            
+            window.WaitForClose();
         });
         
         t.Start();
