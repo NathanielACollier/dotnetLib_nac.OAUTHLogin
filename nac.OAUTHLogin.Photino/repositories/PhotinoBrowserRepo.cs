@@ -39,6 +39,11 @@ public class PhotinoBrowserRepo
             
             window.WaitForClose();
         });
+
+        if (System.OperatingSystem.IsWindows())
+        {
+            t.SetApartmentState(System.Threading.ApartmentState.STA);
+        }
         
         t.Start();
         
